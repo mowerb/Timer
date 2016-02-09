@@ -1,7 +1,154 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3nO-06-y7o">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="8Lv-I2-tBI">
+            <objects>
+                <viewController id="D5y-YH-Mas" customClass="TimerViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dO3-jk-XEZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wDj-Ra-hyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eLw-Xb-Itg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gJi-aU-AXA">
+                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="cf7-vP-g5C"/>
+                                </constraints>
+                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pib-ef-qhE">
+                                <rect key="frame" x="0.0" y="84" width="600" height="467"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXH-Pv-dyC">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="156"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c82-pb-BA9">
+                                                <rect key="frame" x="279" y="67" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ct7-LN-Ccc">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="156"/>
+                                                <date key="date" timeIntervalSinceReferenceDate="476745808.80644703">
+                                                    <!--2016-02-09 21:23:28 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="c82-pb-BA9" firstAttribute="centerY" secondItem="tXH-Pv-dyC" secondAttribute="centerY" id="1n6-Qf-mwi"/>
+                                            <constraint firstItem="Ct7-LN-Ccc" firstAttribute="top" secondItem="tXH-Pv-dyC" secondAttribute="top" id="4dn-nV-bQb"/>
+                                            <constraint firstItem="c82-pb-BA9" firstAttribute="centerX" secondItem="tXH-Pv-dyC" secondAttribute="centerX" id="BLo-6X-Uqs"/>
+                                            <constraint firstItem="Ct7-LN-Ccc" firstAttribute="leading" secondItem="tXH-Pv-dyC" secondAttribute="leading" id="IhG-zL-QXE"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ct7-LN-Ccc" secondAttribute="trailing" id="bD4-d1-XNs"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ct7-LN-Ccc" secondAttribute="bottom" id="eJ5-td-yDi"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yg9-JT-VrH">
+                                        <rect key="frame" x="0.0" y="156" width="600" height="155"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="h7R-OJ-x8Y">
+                                                <rect key="frame" x="200" y="48" width="200" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZL7-mL-wtP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="60"/>
+                                                        <state key="normal" title="Pause"/>
+                                                        <connections>
+                                                            <action selector="pauseButtonTapped:" destination="D5y-YH-Mas" eventType="touchUpInside" id="8JU-Gp-Stm"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-Ig-nbt">
+                                                        <rect key="frame" x="166" y="0.0" width="34" height="60"/>
+                                                        <state key="normal" title="Start"/>
+                                                        <connections>
+                                                            <action selector="startButtonTapped:" destination="D5y-YH-Mas" eventType="touchUpInside" id="TSv-ke-Xcm"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="PxW-JY-UWg"/>
+                                                    <constraint firstAttribute="height" constant="60" id="ef6-iL-z2A"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="h7R-OJ-x8Y" firstAttribute="centerY" secondItem="Yg9-JT-VrH" secondAttribute="centerY" id="BBS-t4-R3K"/>
+                                            <constraint firstItem="h7R-OJ-x8Y" firstAttribute="centerX" secondItem="Yg9-JT-VrH" secondAttribute="centerX" id="Ukk-qu-5jZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPJ-6f-9Sv">
+                                        <rect key="frame" x="0.0" y="311" width="600" height="156"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gJi-aU-AXA" firstAttribute="top" secondItem="eLw-Xb-Itg" secondAttribute="top" id="1kd-bD-XWg"/>
+                            <constraint firstItem="Pib-ef-qhE" firstAttribute="leading" secondItem="eLw-Xb-Itg" secondAttribute="leading" id="IRL-Yr-zx8"/>
+                            <constraint firstItem="gJi-aU-AXA" firstAttribute="leading" secondItem="Pib-ef-qhE" secondAttribute="leading" id="JHs-34-eTd"/>
+                            <constraint firstItem="Pib-ef-qhE" firstAttribute="top" secondItem="dO3-jk-XEZ" secondAttribute="bottom" constant="20" id="SET-8E-ymO"/>
+                            <constraint firstAttribute="trailing" secondItem="Pib-ef-qhE" secondAttribute="trailing" id="nIB-a0-oRE"/>
+                            <constraint firstItem="wDj-Ra-hyI" firstAttribute="top" secondItem="Pib-ef-qhE" secondAttribute="bottom" id="r3B-g9-dcq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="VgY-XE-jJS"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Ct7-LN-Ccc" id="6Xb-dM-uxN"/>
+                        <outlet property="pauseButton" destination="ZL7-mL-wtP" id="tBa-F8-NH0"/>
+                        <outlet property="progressView" destination="gJi-aU-AXA" id="D6Z-3A-a3R"/>
+                        <outlet property="startButton" destination="Wxc-Ig-nbt" id="Mi6-iW-K4I"/>
+                        <outlet property="timerLabel" destination="c82-pb-BA9" id="kq3-hD-FxX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YMa-YF-74y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2226" y="419"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="d4E-f3-CS3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZdH-2Q-04I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="H8C-kX-pMF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kdL-68-ZOz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="D5y-YH-Mas" kind="relationship" relationship="rootViewController" id="AYn-Sw-vhw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLG-AT-vPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414" y="419"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Oaz-Vd-9SX">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="3nO-06-y7o" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tJB-hi-mOg">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZdH-2Q-04I" kind="relationship" relationship="viewControllers" id="iUX-Gv-VCR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wAe-Jv-OM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="602" y="419"/>
+        </scene>
+    </scenes>
 </document>
