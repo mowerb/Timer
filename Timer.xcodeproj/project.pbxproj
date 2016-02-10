@@ -101,11 +101,11 @@
 		01A6AB3A1BD55A8600293874 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				15268E3A1C6A8D1600B82F8A /* TimerViewController.swift */,
-				01A6AB421BD55A8600293874 /* Assets.xcassets */,
-				01A6AB6B1BD55B4500293874 /* Main.storyboard */,
 				AB93870D1C6A999B007D9D02 /* Timer.swift */,
+				15268E3A1C6A8D1600B82F8A /* TimerViewController.swift */,
 				AB93870B1C6A98C0007D9D02 /* AlarmViewController.swift */,
+				01A6AB6B1BD55B4500293874 /* Main.storyboard */,
+				01A6AB421BD55A8600293874 /* Assets.xcassets */,
 				01A6AB441BD55A8600293874 /* LaunchScreen.storyboard */,
 				01A6AB691BD55B1800293874 /* AppDelegate.swift */,
 				01A6AB471BD55A8600293874 /* Info.plist */,

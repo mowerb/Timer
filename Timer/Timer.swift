@@ -53,7 +53,6 @@ class Timer: NSObject {
                 secondsString = "0\(seconds)"
             } else {
                 secondsString = "\(seconds)"
-            
             }
             
             return hoursString + minutesString + secondsString

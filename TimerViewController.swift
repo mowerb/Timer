@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerViewController: UIViewController {
+class TimerViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var timerLabel: UILabel!
@@ -21,24 +21,16 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTimerBasedViews", name: Timer.notificationSecondTick, object: timer)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "timerComplete", name: Timer.notificationComplete, object: timer)
+        
+        view.layoutIfNeeded()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
 
     
     @IBAction func pauseButtonTapped(sender: AnyObject) {
@@ -57,7 +49,6 @@ class TimerViewController: UIViewController {
             let hours = datePicker.countDownDuration / 3600
             let minutes = (datePicker.countDownDuration - (hours * 3600)) / 60
             let seconds = (datePicker.countDownDuration - (hours * 3600) - (minutes * 60))
-                
             
             timer.setTimer(seconds, totalSeconds: seconds)
             updateTimerBasedViews()
@@ -104,6 +95,16 @@ class TimerViewController: UIViewController {
         progressView.hidden = true
         startButton.setTitle("Start", forState: .Normal)
     }
+    
+    /*
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
+    */
     
 }
 
